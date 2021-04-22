@@ -1,0 +1,16 @@
+{%extends "base.html"%}
+{%from "help.html" import render_field %}
+{%block main%}
+<style>
+    .form{
+        text-align: center;
+    }
+</style>
+<div class="form">
+<form action="/cadastrar_empresa" method="post">
+    {{form.csrf_token}}
+    {{render_field(form.nome)}}
+    {{form.submit}}
+</form>
+</div>
+{%endblock%}
